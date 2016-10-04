@@ -4,8 +4,21 @@
   reposObj.allRepos = [];
 
   reposObj.requestRepos = function(callback) {
-    /* TODO: How would you like to fetch your repos? Someone say AJAX?!
+    /* DONE: How would you like to fetch your repos? Someone say AJAX?!
       Do not forget to call the callback! */
+    $.ajax({
+      url: 'https://api.github.com/users/codefellows/repos',
+      headers: {
+        Authorization: 'token ' + token
+      },
+      success: successHandler,
+    });
+    function successHandler(data) {
+      reposObj.allRepos = data;
+      callback();
+    };
+
+    // reposObj.requestRepos(callback);
   };
 
   reposObj.withTheAttribute = function(myAttr) {
@@ -14,5 +27,6 @@
     });
   };
 
+  // reposObj.requestRepos();
   module.reposObj = reposObj;
 })(window);
