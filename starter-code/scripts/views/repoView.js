@@ -1,6 +1,6 @@
 (function(module) {
   var repoView = {};
-  /* TODO: Let's compile our new template!
+  /* DONE: Let's compile our new template!
        Save the result of invoking Handlebars in this 'repoCompiler' variable
        that we will pass to the append method below. */
   var source = $('#repo-template').html();
