@@ -12,8 +12,8 @@
       url: 'https://api.github.com/users/GloriaAnholt/repos',
       headers: { Authorization: 'token ' + token },
       success: function(data, status, xhr){
-        console.log('success, here are the data:' + data);
-        callback();
+        reposObj.allRepos = data;
+        callback();  // same as repoView.renderRepos();
       },
       error: function(xhr, settings, error){
         console.log('Ajax call error:', error);
