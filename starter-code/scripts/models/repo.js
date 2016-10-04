@@ -9,6 +9,7 @@
     $.get('https://api.github.com/users/codefellows/repos', function(data) {
       console.log('data from api: ', data);
     });
+    callback();
   };
 
   reposObj.withTheAttribute = function(myAttr) {
