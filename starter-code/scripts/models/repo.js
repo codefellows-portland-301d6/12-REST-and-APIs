@@ -6,13 +6,11 @@
   reposObj.requestRepos = function(callback) {
     /* DONE: How would you like to fetch your repos? Someone say AJAX?!
       Do not forget to call the callback! */
-    console.log('requestRepos running');
     $.ajax({
       url: 'https://api.github.com/users/nthugon/repos',
       type: 'GET',
       success: function(data, status, xhr){
         reposObj.allRepos = data;
-        console.log(data);
         callback();
       },
       headers: {
