@@ -11,7 +11,6 @@
       headers: {Authorization: 'token ' + githubtoken},
       success: function(data) {
         reposObj.allRepos = data;
-        console.log(data);
         callback();
       }
     });

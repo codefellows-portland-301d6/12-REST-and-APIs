@@ -7,7 +7,6 @@
   var repoCompiler = Handlebars.compile(source);
 
   repoView.renderRepos = function() {
-    console.log('hello');
     $('#about ul').empty().append(
       reposObj.withTheAttribute('fork')  // TODO: experiment changing this attribute!
       .map(repoCompiler)
