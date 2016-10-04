@@ -10,10 +10,11 @@
       url: 'https://api.github.com/users/mugsycarter/repos',
       password: token,
       success: function(data, status, xhr){
-        console.log(data);
+        console.log('success, here are the data:' + data);
+        callback();
       },
       error: function(xhr, settings, error){
-        console.log(error);
+        console.log('Ajax call error:' + error);
       }
     });
 
