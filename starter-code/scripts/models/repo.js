@@ -4,8 +4,16 @@
   reposObj.allRepos = [];
 
   reposObj.requestRepos = function(callback) {
-    /* TODO: How would you like to fetch your repos? Someone say AJAX?!
+    /* DONE: How would you like to fetch your repos? Someone say AJAX?!
       Do not forget to call the callback! */
+    $.ajax({
+      url: 'https://api.github.com/users/waxhoya/repos',
+      headers: {Authorization: 'token ' + gitToken},
+      success: function(data) {
+        reposObj.allRepos = data;
+        callback();
+      }
+    });
   };
 
   reposObj.withTheAttribute = function(myAttr) {
