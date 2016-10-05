@@ -8,8 +8,8 @@
       headers:{ Authorization: 'token '+ gitToken}
     })
 		.done(function(data){
-      reposObj = callback;}
-    );
+      reposObj.allRepos = callback;
+    });
   };
 
   reposObj.withTheAttribute = function(myAttr) {
